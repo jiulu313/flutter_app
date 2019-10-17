@@ -15,7 +15,6 @@ class _StateGroupState extends State<StatefulGroupWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('_current= $_currentIndex');
 
     TextStyle textStyle = TextStyle(
         color: Colors.red, fontSize: 26, backgroundColor: Colors.amber);

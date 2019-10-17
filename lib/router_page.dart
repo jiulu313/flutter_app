@@ -1,47 +1,42 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FlutterRoutePage extends StatefulWidget{
+class FlutterRoutePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _FlutterRoutePage();
   }
-
 }
 
-class _FlutterRoutePage extends State<FlutterRoutePage>{
+class _FlutterRoutePage extends State<FlutterRoutePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:Color.fromARGB(255, 255, 0, 255),
+      color: Color.fromARGB(255, 255, 0, 255),
       child: Column(
         children: <Widget>[
-          _item('Java',_PageJava(),'Java'),
-          _item('Cpp',_Cpp(),'Cpp')
+          Text('java'),
+          Text('cpp'),
+//          _item('Java', _PageJava(), 'Java'),
+//          _item('Cpp', _Cpp(), 'Cpp')
         ],
       ),
     );
   }
 
-  _item(String title, Widget pageJava, String routeName) {
-    return Container(
-
-    );
+  Widget _item(String title, Widget pageJava, String routeName) {
+    return Text(title);
   }
-
 }
 
-
-class _PageJava extends StatefulWidget{
+class _PageJava extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _PageJavaImpl();
   }
-
 }
 
-class _PageJavaImpl extends State<StatefulWidget>{
+class _PageJavaImpl extends State<_PageJava> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,15 +46,14 @@ class _PageJavaImpl extends State<StatefulWidget>{
   }
 }
 
-class _Cpp extends StatefulWidget{
+class _Cpp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _CppImpl();
   }
-
 }
 
-class _CppImpl extends State<_Cpp>{
+class _CppImpl extends State<_Cpp> {
   @override
   Widget build(BuildContext context) {
     return Container(
