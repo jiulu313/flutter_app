@@ -29,6 +29,7 @@ class _LoginPage extends State<LoginPage> {
             Padding(padding:EdgeInsets.only(top: 70)),
         Center(child: Image.network(_imgUrl, width: 100, height: 100)),
         Center(child: Text('美鲜送', style: TextStyle(fontSize: 20))),
+        Padding(padding: EdgeInsets.only(top: 30),),
         Center(
             child: Row(
                 children:[
@@ -44,12 +45,20 @@ class _LoginPage extends State<LoginPage> {
     );
   }
 
+  Widget _makeEditText(){
+    return Column(
+      children: <Widget>[
+
+      ],
+    );
+  }
 
   Widget _makeAccountWidget() {
-    return Container(
+    return Expanded(
       child: Row(
         children: <Widget>[
           _makeButtonIndicationWidget('账号登录'),
+          Padding(padding:EdgeInsets.only(top: 10)),
           _makeButtonIndicationWidget('快捷登录'),
         ],
       ),
@@ -58,13 +67,13 @@ class _LoginPage extends State<LoginPage> {
   }
 
   Widget _makeButtonIndicationWidget(String title){
-    return Container(
+    return Expanded(
       child: Column(
         children: <Widget>[
           Text(title),
           Container(
-            width: 300,
-            height: 10,
+            margin: EdgeInsets.symmetric(horizontal: 12,vertical: 4),
+            height: 4,
             color: Colors.blue,
           )
         ],
