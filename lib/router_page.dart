@@ -26,12 +26,6 @@ class _FlutterRoutePage extends State<FlutterRoutePage>{
 
   _item(String title, Widget pageJava, String routeName) {
     return Container(
-      child: RaisedButton(
-        onPressed: (){
-
-        },
-        child: Text(title),
-      ),
 
     );
   }
