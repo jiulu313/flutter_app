@@ -11,32 +11,47 @@ class FlutterRoutePage extends StatefulWidget {
 class _FlutterRoutePage extends State<FlutterRoutePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 255, 0, 255),
-      child: Column(
-        children: <Widget>[
-          Text('java'),
-          Text('cpp'),
-//          _item('Java', _PageJava(), 'Java'),
-//          _item('Cpp', _Cpp(), 'Cpp')
-        ],
+    return Scaffold(
+      appBar: AppBar(title: Text('路由使用')),
+      body: Container(
+        color: Color.fromARGB(255, 255, 0, 255),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(child: Text('java'),onPressed: (){
+              print('java pressed');
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context){
+                    return PageJava();
+                  }
+              ));
+            }),
+
+            RaisedButton(child: Text('cpp'),onPressed: (){
+              print('cpp pressed');
+
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context){
+                    return Cpp();
+                  }
+              ));
+            }),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _item(String title, Widget pageJava, String routeName) {
-    return Text(title);
-  }
+
 }
 
-class _PageJava extends StatefulWidget {
+class PageJava extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _PageJavaImpl();
   }
 }
 
-class _PageJavaImpl extends State<_PageJava> {
+class _PageJavaImpl extends State<PageJava> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,14 +61,14 @@ class _PageJavaImpl extends State<_PageJava> {
   }
 }
 
-class _Cpp extends StatefulWidget {
+class Cpp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _CppImpl();
   }
 }
 
-class _CppImpl extends State<_Cpp> {
+class _CppImpl extends State<Cpp> {
   @override
   Widget build(BuildContext context) {
     return Container(
